@@ -1,0 +1,115 @@
+body{height:100vh; width:100vw; background: #00204a;}
+.todo_list{
+  $mainColor : #005792;
+  $pointColor : #00bbf0;
+  $cancleColor : #fdb44b; 
+
+  @mixin button_custom {
+    font-weight: 700;
+    border:none;
+    color:#fff;
+    box-sizing: border-box;
+  }
+
+  color:#fff;
+  padding:0 5%;
+
+  h1{
+    font-size: 2rem;
+    text-align: center;
+    padding:5%;
+  }
+  .TodoInput{
+    text-align: center;
+    box-sizing: border-box;
+    width:100%;
+
+    input{
+      box-sizing: border-box;
+      width:80%;
+      padding:3%;
+      color:#fff;
+      background: darken($mainColor,10%);
+      font-weight: 700;
+    }
+    input:focus{
+      background: lighten($mainColor, $amount: 1);
+    }
+    button{
+      @include button_custom;
+      background: $pointColor;
+      width:20%;
+      padding:3%;
+    }
+    button:hover{
+      background: lighten($pointColor, $amount: 10)
+    }
+  }
+  .todo_items{
+    margin: 10% 0;
+    h2{
+      font-size: 1.5rem;
+      margin-bottom: 5%;
+    }
+    .todo_length{
+      font-size: 2rem;
+      color:$pointColor;
+    }
+    li{
+      list-style: none;
+      box-sizing: border-box;
+      width:100%;
+      padding:5%;
+      background: $mainColor;
+      margin-bottom: 5%;
+      display: flex;
+      align-items: center;
+
+			input[id="cb1"] + label {
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+				border: 2px solid #fff;
+				cursor: pointer;
+        text-align: center;
+        color:transparent;
+        font-size: 1.5rem;
+			}
+			input[id="cb1"]:checked + label {
+        color:#fff
+			}
+			input[id="cb1"] {
+				display: none;
+			}
+      span{
+        display: inline-block;
+        width: calc(100% - 130px);
+        box-sizing: border-box;
+        padding:0 10%;
+      }
+      input[id="cb1"]:checked + span{
+        text-decoration: line-through
+      }
+      .modify{
+        @include button_custom;
+        background: $pointColor;
+        transition:background .3s;
+        width:50px;
+        line-height: 30px;
+      }
+      .modify:hover{
+        background: lighten($pointColor, $amount: 10)
+      }
+      .delete{
+        @include button_custom;
+        background: $cancleColor;
+        transition:background .3s;
+        width:50px;
+        line-height: 30px;
+      }
+      .delete:hover{
+        background: lighten($cancleColor, $amount: 10)
+      }
+    }
+  }
+}
