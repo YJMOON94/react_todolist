@@ -65,7 +65,7 @@ body{height:100vh; width:100vw; background: #00204a;}
       display: flex;
       align-items: center;
 
-			input[id="cb1"] + label {
+			input[id] + label {
 				display: inline-block;
 				width: 30px;
 				height: 30px;
@@ -75,11 +75,11 @@ body{height:100vh; width:100vw; background: #00204a;}
         color:transparent;
         font-size: 1.5rem;
 			}
-			input[id="cb1"]:checked + label {
+			input[id]:checked + label {
         color:#fff
 			}
-			input[id="cb1"] {
-				display: none;
+			input[id] {
+				// display: none;
 			}
       span{
         display: inline-block;
@@ -87,7 +87,7 @@ body{height:100vh; width:100vw; background: #00204a;}
         box-sizing: border-box;
         padding:0 10%;
       }
-      input[id="cb1"]:checked + span{
+      input[id]:checked + span{
         text-decoration: line-through
       }
       .modify{

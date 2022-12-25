@@ -1,24 +1,24 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 const TodoItem = (props)=>{
 
 
     return(
-        <li className={'list_'+ props.index}>
+        <li className={'list_'+ (props.index)}>
             <input
                 type="checkbox"
-                id="cb1"
-                onClick={()=>{
-                    props.todo_toggle(props.index);
+                id={'cd'+props.index}
+                onClick={(event)=>{
+                    props.todo_toggle(event,props.index);
                 }}>
 
             </input>
-            <label htmlFor="cb1"><i className="fa-solid fa-check"></i></label>
+            <label htmlFor={'cd'+props.index}><i className="fa-solid fa-check"></i></label>
             <span>
                 {props.item}
             </span>
             <button className="modify">수정</button>
-            <button className="delete">삭제</button>
+            <button onClick={()=>props.todo_delete(props.index)} className="delete">삭제</button>
         </li>
     )
 }
