@@ -17,8 +17,6 @@ const TodoItem = (props)=>{
             <span>
                 {props.item}
             </span>
-            <button className="modify">수정</button>
-            <button onClick={()=>props.todo_delete(props.index)} className="delete">삭제</button>
         </li>
     )
 }
